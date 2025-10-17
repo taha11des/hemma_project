@@ -8,7 +8,7 @@ void main() {
 }
 
 class HammaApp extends StatelessWidget {
-  const HammaApp({Key? key}) : super(key: key);
+  const HammaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class HammaApp extends StatelessWidget {
 }
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  const MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -94,7 +94,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 }
 
 class LessonsTab extends StatelessWidget {
-  const LessonsTab({Key? key}) : super(key: key);
+  const LessonsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -153,7 +153,7 @@ final List<Lesson> lessons = [
 class LessonCard extends StatelessWidget {
   final Lesson lesson;
 
-  const LessonCard({Key? key, required this.lesson}) : super(key: key);
+  const LessonCard({super.key, required this.lesson});
 
   Color getDifficultyColor(String difficulty) {
     switch (difficulty) {
@@ -238,7 +238,7 @@ class LessonCard extends StatelessWidget {
 class LessonDetailScreen extends StatelessWidget {
   final Lesson lesson;
 
-  const LessonDetailScreen({Key? key, required this.lesson}) : super(key: key);
+  const LessonDetailScreen({super.key, required this.lesson});
 
   @override
   Widget build(BuildContext context) {
@@ -331,7 +331,7 @@ class LessonDetailScreen extends StatelessWidget {
 }
 
 class SkillsTab extends StatelessWidget {
-  const SkillsTab({Key? key}) : super(key: key);
+  const SkillsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -400,7 +400,7 @@ class SkillsTab extends StatelessWidget {
 }
 
 class AudioConversionTab extends StatefulWidget {
-  const AudioConversionTab({Key? key}) : super(key: key);
+  const AudioConversionTab({super.key});
 
   @override
   State<AudioConversionTab> createState() => _AudioConversionTabState();
@@ -429,7 +429,9 @@ class _AudioConversionTabState extends State<AudioConversionTab> {
   void _listen() async {
     if (!_isListening) {
       bool available = await _speech.initialize(
+        // ignore: avoid_print
         onStatus: (val) => print('onStatus: $val'),
+        // ignore: avoid_print
         onError: (val) => print('onError: $val'),
       );
       if (available) {
