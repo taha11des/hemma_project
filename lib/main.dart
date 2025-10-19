@@ -72,13 +72,15 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
             Tab(text: 'الدروس'),
             Tab(text: 'المهارات الرئيسية'),
             Tab(text: 'تحويل الصوت'),
+            Tab(text: "الرئيسية"),
           ],
           labelStyle: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
+            color: Colors.white
           ),
         ),
-        backgroundColor: Colors.blue[600],
+        backgroundColor: const Color.fromARGB(255, 100, 2, 95),
         elevation: 0,
       ),
       body: TabBarView(
